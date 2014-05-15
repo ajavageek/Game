@@ -1,0 +1,30 @@
+apply plugin: 'scala'
+apply plugin: 'maven'
+
+group = 'ch.frankel.game'
+version = '1.0.0'
+
+project.ext {
+    scalaVersion = '2.11.0'
+}
+
+dependencies {
+    compile     'org.scala-lang:scala-library:2.11.0'
+    testCompile 'org.specs2:specs2_2.11:2.3.11'
+}
+
+repositories {
+    mavenCentral()
+}
+
+test {
+    jvmArgs '-Dspecs2.console'
+    include '**/*Spec*'
+    onOutput { descriptor, event ->
+        logger.lifecycle("Test: " + descriptor + ": " + event.message )
+    }
+}
+
+task wrapper(type: Wrapper) {
+    gradleVersion = '1.12'
+}
