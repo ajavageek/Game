@@ -4,7 +4,7 @@ This simple Scala project offers a simple model for dice rolling, in the context
 
 At the root of the hierarchy lies the `Rollable` trait. It offers a single `roll()` method, which returns a Tuple of itself and the rolled result.
 
-```
+```scala
 trait Rollable[T] {
 
   def roll:(Rollable[T], T)
@@ -13,7 +13,7 @@ trait Rollable[T] {
 
 Directly extending `Rollable` is `Die` It represents of those multi-sided dice commonly found in Role Playing Games.
 
-```
+```scala
 class Die (val sides:Int)(implicit random:Random) extends Rollable[Int] {
 
   override def roll:(Die, Int) = (this, random.nextInt(sides) + 1)
