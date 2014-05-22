@@ -11,7 +11,8 @@ import java.security.SecureRandom
  */
 class Die (val sides:Int)(implicit random:Random) extends Rollable[Int] {
 
-  override def roll:(Die, Int) = (this, random.nextInt(sides) + 1)
+  override def roll:Int = random.nextInt(sides) + 1
+  override def toString:String = "d" + sides
 }
 
 object SecureDie {

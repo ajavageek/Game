@@ -2,7 +2,7 @@ apply plugin: 'scala'
 apply plugin: 'maven'
 
 group = 'ch.frankel.game'
-version = '1.0.0'
+version = '1.1.0'
 
 project.ext {
     scalaVersion = '2.11.0'

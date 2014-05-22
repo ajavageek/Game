@@ -16,7 +16,7 @@ object DieSpec extends Specification with Mockito {
     "return rolled result plus one" in new die(mock[Random]) {
 
       random.nextInt(100) returns 5
-      die.roll._2 mustEqual 6
+      die.roll mustEqual 6
     }
   }
 

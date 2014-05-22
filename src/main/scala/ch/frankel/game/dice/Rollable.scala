@@ -12,5 +12,5 @@ trait Rollable[T] {
    *
    * @return Tuple consisting of 1) the rollable itself and 2) the rolled result
    */
-  def roll:(Rollable[T], T)
+  def roll:T
 }
