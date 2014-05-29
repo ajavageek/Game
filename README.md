@@ -7,7 +7,7 @@ At the root of the hierarchy lies the `Rollable` trait. It offers a single `roll
 ```scala
 trait Rollable[T] {
 
-  def roll:(Rollable[T], T)
+  def roll:T
 }
 ```
 
@@ -16,7 +16,7 @@ Directly extending `Rollable` is `Die` It represents of those multi-sided dice c
 ```scala
 class Die (val sides:Int)(implicit random:Random) extends Rollable[Int] {
 
-  override def roll:(Die, Int) = (this, random.nextInt(sides) + 1)
+  override def roll:Int = random.nextInt(sides) + 1
 }
 ```
 
